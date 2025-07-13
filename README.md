@@ -24,12 +24,6 @@ La app está dividida en secciones accesibles desde el menú lateral:
 
 ---
 
-## 🖼️ Captura del proyecto
-
-![dashboard](images/captura_ejemplo.png) <!-- Puedes guardar una imagen con ese nombre en la carpeta images/ -->
-
----
-
 ## 🛠️ Tecnologías utilizadas
 
 - Python 3.12
@@ -60,4 +54,3 @@ streamlit run main.py
 Valentina Bailon Cano
 Máster en Data Science & Inteligencia Artificial – EVOLVE
 www.linkedin.com/in/valentina-bailon-2653b22b7
-

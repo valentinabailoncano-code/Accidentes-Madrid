@@ -19,7 +19,7 @@ with col2:
 st.markdown("---")
 
 # Menú de navegación personalizado
-menu = (
+menu = st.selectbox("Selecciona una sección:", (
     "Inicio",
     "Medidas Descriptivas",
     "Detección de Outliers",
@@ -29,7 +29,7 @@ menu = (
     "Pruebas de Hipótesis",
     "Correlaciones",
     "Análisis Exploratorio"
-)
+))
 
 if menu == "Inicio":
     st.markdown("""
@@ -54,4 +54,4 @@ Este proyecto tiene como finalidad aplicar los conocimientos fundamentales de es
 ### 🛠️ Tecnologías Utilizadas
 
 Python · pandas · numpy · scipy · streamlit · plotly · pydeck · pyproj
-""")
+    """)

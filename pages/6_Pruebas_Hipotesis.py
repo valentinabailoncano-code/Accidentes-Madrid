@@ -63,7 +63,7 @@ st.subheader("4. ¿Es significativa la proporción de alcohol?")
 successes = (df["positiva_alcohol"] == "S").sum()
 n_total = len(df)
 expected_p = 0.05
-p_val4 = stats.binom_test(successes, n_total, expected_p, alternative="greater")
+p_val4 = stats.binomtest(successes, n=n_total, p=expected_p, alternative="greater").pvalue
 st.write(f"H0: proporción = 0.05 | Observado = {successes}/{n_total}, p = {p_val4:.4f}")
 
 ### 5. ANOVA: edad media entre distritos

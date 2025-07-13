@@ -54,28 +54,4 @@ Este proyecto tiene como finalidad aplicar los conocimientos fundamentales de es
 ### 🛠️ Tecnologías Utilizadas
 
 Python · pandas · numpy · scipy · streamlit · plotly · pydeck · pyproj
-    """)
-
-elif menu == "Medidas Descriptivas":
-    import pages._Medidas_Descriptivas 
-
-elif menu == "Detección de Outliers":
-    import pages._Deteccion_Outliers 
-
-elif menu == "Simulaciones":
-    import pages._Simulaciones_Probabilidad 
-
-elif menu == "Distribuciones Teóricas":
-    import pages._Distribuciones_Teoricas 
-
-elif menu == "Intervalos de Confianza":
-    import pages._Intervalos_Confianza 
-
-elif menu == "Pruebas de Hipótesis":
-    import pages._Pruebas_Hipotesis 
-
-elif menu == "Correlaciones":
-    import pages._Correlaciones 
-
-elif menu == "Análisis Exploratorio":
-    import pages._Analisis_Exploratorio 
+""")

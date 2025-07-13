@@ -18,19 +18,6 @@ with col2:
 
 st.markdown("---")
 
-# Menú de navegación personalizado
-menu = st.selectbox("Selecciona una sección:", (
-    "Inicio",
-    "Medidas Descriptivas",
-    "Detección de Outliers",
-    "Simulaciones",
-    "Distribuciones Teóricas",
-    "Intervalos de Confianza",
-    "Pruebas de Hipótesis",
-    "Correlaciones",
-    "Análisis Exploratorio"
-))
-
 if menu == "Inicio":
     st.markdown("""
 ### 🎯 Objetivo del Proyecto

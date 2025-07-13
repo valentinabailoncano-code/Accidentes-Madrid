@@ -3,21 +3,15 @@
 import streamlit as st
 from PIL import Image
 
-st.set_page_config(
-    page_title="Proyecto Estadístico - Valentina Bailon",
-    layout="wide",
-    page_icon="📊"
-)
-
-# Oculta el menú lateral por defecto
-hide_menu = """
+# Oculta el sidebar de Streamlit
+st.set_page_config(page_title="Análisis Estadístico", layout="wide", page_icon="📊")
+st.markdown("""
     <style>
     [data-testid="stSidebar"] {display: none;}
     </style>
-"""
-st.markdown(hide_menu, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# Banner superior
+# Logo y encabezado superior
 col1, col2 = st.columns([1, 5])
 with col1:
     st.image("images/evolve_logo.png", width=100)
@@ -29,37 +23,72 @@ with col2:
 
 st.markdown("---")
 
-# Descripción extendida
-st.markdown("""
+# Menú de navegación personalizado
+menu = st.selectbox("Selecciona una sección:", (
+    "Inicio",
+    "Medidas Descriptivas",
+    "Detección de Outliers",
+    "Simulaciones",
+    "Distribuciones Teóricas",
+    "Intervalos de Confianza",
+    "Pruebas de Hipótesis",
+    "Correlaciones",
+    "Análisis Exploratorio"
+))
+
+if menu == "Inicio":
+    st.markdown("""
 ### 🎯 Objetivo del Proyecto
 
 Este proyecto tiene como finalidad aplicar los conocimientos fundamentales de estadística y probabilidad para analizar una base de datos real sobre accidentes de tráfico en la ciudad de Madrid. A través de una aplicación interactiva en Streamlit, se exploran distintos enfoques analíticos combinando cálculo manual, simulaciones, distribuciones teóricas, inferencias estadísticas y visualización de datos.
 
+---
 
 ### 📂 Contenido de la Aplicación
-
 - Medidas descriptivas manuales y con librerías
 - Detección de outliers mediante IQR y Z-score
 - Simulaciones de eventos reales como accidentes con alcohol
 - Comparación con distribuciones teóricas (Normal, Binomial, Poisson)
-- Construcción de intervalos de confianza para medias y proporciones
-- Pruebas de hipótesis (T-test, Chi-cuadrado, ANOVA)
+- Construcción de intervalos de confianza
+- Pruebas de hipótesis (T-test, proporciones, ANOVA)
 - Correlaciones (Pearson, Spearman, Kendall)
-- Análisis exploratorio final con mapa interactivo y filtros dinámicos
-
-
-### 🛠️ Tecnologías Utilizadas
-
-- Python · pandas · numpy · scipy · plotly · streamlit · pydeck · pyproj
-- Visual Studio Code · Git · GitHub
-
-
-### 📌 Cómo Navegar
-
-Puedes explorar todas las secciones del proyecto a través del menú lateral izquierdo.
-Si estás en Streamlit Cloud y no ves el menú, utiliza el icono de la flecha 📂 para abrirlo.
+- Análisis exploratorio final con mapa interactivo
 
 ---
 
-💡 *Este proyecto está diseñado para demostrar el dominio estadístico, analítico y visual en un entorno real y profesional.*
-""")
+### 🛠️ Tecnologías Utilizadas
+
+Python · pandas · numpy · scipy · streamlit · plotly · pydeck · pyproj
+    """)
+
+elif menu == "Medidas Descriptivas":
+    import pages.1_Medidas_Descriptivas as mod
+    mod
+
+elif menu == "Detección de Outliers":
+    import pages.2_Deteccion_Outliers as mod
+    mod
+
+elif menu == "Simulaciones":
+    import pages.3_Simulaciones_Probabilidad as mod
+    mod
+
+elif menu == "Distribuciones Teóricas":
+    import pages.4_Distribuciones_Teoricas as mod
+    mod
+
+elif menu == "Intervalos de Confianza":
+    import pages.5_Intervalos_Confianza as mod
+    mod
+
+elif menu == "Pruebas de Hipótesis":
+    import pages.6_Pruebas_Hipotesis as mod
+    mod
+
+elif menu == "Correlaciones":
+    import pages.7_Correlaciones as mod
+    mod
+
+elif menu == "Análisis Exploratorio":
+    import pages.8_Analisis_Exploratorio as mod
+    mod

@@ -62,33 +62,33 @@ Python · pandas · numpy · scipy · streamlit · plotly · pydeck · pyproj
     """)
 
 elif menu == "Medidas Descriptivas":
-    import pages.1_Medidas_Descriptivas as mod
+    import pages._Medidas_Descriptivas as mod
     mod
 
 elif menu == "Detección de Outliers":
-    import pages.2_Deteccion_Outliers as mod
+    import pages._Deteccion_Outliers as mod
     mod
 
 elif menu == "Simulaciones":
-    import pages.3_Simulaciones_Probabilidad as mod
+    import pages._Simulaciones_Probabilidad as mod
     mod
 
 elif menu == "Distribuciones Teóricas":
-    import pages.4_Distribuciones_Teoricas as mod
+    import pages._Distribuciones_Teoricas as mod
     mod
 
 elif menu == "Intervalos de Confianza":
-    import pages.5_Intervalos_Confianza as mod
+    import pages._Intervalos_Confianza as mod
     mod
 
 elif menu == "Pruebas de Hipótesis":
-    import pages.6_Pruebas_Hipotesis as mod
+    import pages._Pruebas_Hipotesis as mod
     mod
 
 elif menu == "Correlaciones":
-    import pages.7_Correlaciones as mod
+    import pages._Correlaciones as mod
     mod
 
 elif menu == "Análisis Exploratorio":
-    import pages.8_Analisis_Exploratorio as mod
+    import pages._Analisis_Exploratorio as mod
     mod

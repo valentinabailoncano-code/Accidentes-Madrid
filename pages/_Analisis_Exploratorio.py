@@ -116,6 +116,10 @@ with st.spinner("Cargando mapa 3D con coordenadas geográficas..."):
 # Gráficos
 # =======================
 st.markdown("### 📈 Distribuciones")
+filtered_df["dia_semana"] = filtered_df["dia_semana"].fillna("Desconocido")
+filtered_df["distrito"] = filtered_df["distrito"].fillna("Sin especificar")
+filtered_df["tipo_accidente"] = filtered_df["tipo_accidente"].fillna("Otro")
+filtered_df["hora"] = filtered_df["hora"].fillna(-1)  # Para que no pete el histograma
 
 colg1, colg2 = st.columns(2)
 with colg1:

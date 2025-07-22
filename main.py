@@ -1,5 +1,4 @@
 # main.py
-
 import streamlit as st
 from PIL import Image
 
@@ -18,21 +17,7 @@ with col2:
 
 st.markdown("---")
 
-# Menú de navegación personalizado
-menu = st.selectbox("Selecciona una sección:", (
-    "Inicio",
-    "Medidas Descriptivas",
-    "Detección de Outliers",
-    "Simulaciones",
-    "Distribuciones Teóricas",
-    "Intervalos de Confianza",
-    "Pruebas de Hipótesis",
-    "Correlaciones",
-    "Análisis Exploratorio"
-))
-
-if menu == "Inicio":
-    st.markdown("""
+st.markdown("""
 ### 🎯 Objetivo del Proyecto
 
 Este proyecto tiene como finalidad aplicar los conocimientos fundamentales de estadística y probabilidad para analizar una base de datos real sobre accidentes de tráfico en la ciudad de Madrid. A través de una aplicación interactiva en Streamlit, se exploran distintos enfoques analíticos combinando cálculo manual, simulaciones, distribuciones teóricas, inferencias estadísticas y visualización de datos.
@@ -54,4 +39,4 @@ Este proyecto tiene como finalidad aplicar los conocimientos fundamentales de es
 ### 🛠️ Tecnologías Utilizadas
 
 Python · pandas · numpy · scipy · streamlit · plotly · pydeck · pyproj
-    """)
+""")

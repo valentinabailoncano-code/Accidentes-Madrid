@@ -72,12 +72,23 @@ st.markdown("### 🌍 Mapa de Accidentes")
 
 with st.spinner("Cargando mapa 3D con coordenadas geográficas..."):
     # Conversión de coordenadas UTM → LatLon
-    latlon_coords = filtered_df.apply(
-        lambda row: pd.Series(utm_to_latlon(row["coordenada_x_utm"], row["coordenada_y_utm"])),
-        axis=1
-    )
-    latlon_coords.columns = ["lon", "lat"]
-    filtered_df = pd.concat([filtered_df.reset_index(drop=True), latlon_coords], axis=1)
+    def safe_utm_to_latlon(row):
+        try:
+            lon, lat = utm_to_latlon(row["coordenada_x_utm"], row["coordenada_y_utm"])
+            return pd.Series([lon, lat])
+        except:
+            return pd.Series([np.nan, np.nan])
+
+    latlon_coords = filtered_df.apply(safe_utm_to_latlon, axis=1)
+
+    if latlon_coords.shape[1] == 2:
+        latlon_coords.columns = ["lon", "lat"]
+        filtered_df = pd.concat([filtered_df.reset_index(drop=True), latlon_coords], axis=1)
+        filtered_df = filtered_df.dropna(subset=["lat", "lon"])
+    else:
+        st.warning("⚠️ No se pudieron convertir las coordenadas con los filtros actuales.")
+        st.stop()
+
 
     # Crear capa Pydeck
     layer = pdk.Layer(

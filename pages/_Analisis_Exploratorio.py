@@ -51,6 +51,10 @@ if alcohol != "Todos":
 if lesiv != "Todas":
     filtered_df = filtered_df[filtered_df["lesividad"] == lesiv]
 
+if filtered_df.empty:
+    st.warning("⚠️ No se encontraron datos con los filtros seleccionados. Ajusta los filtros para visualizar resultados.")
+    st.stop()
+
 # =======================
 # Indicadores
 # =======================

@@ -115,7 +115,7 @@ with st.spinner("Cargando mapa 3D con coordenadas geográficas..."):
 # =======================
 # Gráficos
 # =======================
-st.markdown("### 📈 Distribuciones")
+st.markdown("### 📈 Gráficos de Accidentes")
 filtered_df["dia_semana"] = filtered_df["dia_semana"].fillna("Desconocido")
 filtered_df["distrito"] = filtered_df["distrito"].fillna("Sin especificar")
 filtered_df["tipo_accidente"] = filtered_df["tipo_accidente"].fillna("Otro")
